@@ -19,12 +19,6 @@
 bool ValidateInput(int& value);
 
 /**
- * @class Stack
- * @brief Реализация стека на основе связного списка
- */
-class Stack {
-private:
-    /**
      * @struct Node
      * @brief Узел стека
      */
@@ -39,6 +33,12 @@ private:
         Node(int val) : data(val), next(nullptr) {}
     };
 
+/**
+ * @class Stack
+ * @brief Реализация стека на основе связного списка
+ */
+class Stack {
+private:
     Node* top; 
     int count; 
 
