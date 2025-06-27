@@ -6,23 +6,23 @@ void Stack::Push(int value) {
     Node* newNode = new Node(value);
     newNode->next = top;
     top = newNode;
-    count++;
+    ++count;
 }
 
 void Stack::Pop() {
     if (top == nullptr) {
-        std::cerr << "Îøèáêà: ñòåê ïóñò!" << std::endl;
+        std::cerr << "ÃŽÃ¸Ã¨Ã¡ÃªÃ : Ã±Ã²Ã¥Ãª Ã¯Ã³Ã±Ã²!" << std::endl;
         return;
     }
 
     Node* temp = top;
-    std::cout << "Ïåðâûé ýëåìåíò ñòåêà: " << top->data << std::endl;
+    std::cout << "ÃÃ¥Ã°Ã¢Ã»Ã© Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã² Ã±Ã²Ã¥ÃªÃ : " << top->data << std::endl;
 
     top = top->next;
-    std::cout << "Àäðåñ íîâîé âåðøèíû: " << top << std::endl;
+    std::cout << "Ã€Ã¤Ã°Ã¥Ã± Ã­Ã®Ã¢Ã®Ã© Ã¢Ã¥Ã°Ã¸Ã¨Ã­Ã»: " << top << std::endl;
 
     if (top != nullptr) {
-        std::cout << "Çíà÷åíèå íîâîé âåðøèíû: " << top->data << std::endl;
+        std::cout << "Ã‡Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥ Ã­Ã®Ã¢Ã®Ã© Ã¢Ã¥Ã°Ã¸Ã¨Ã­Ã»: " << top->data << std::endl;
     }
 
     delete temp;
@@ -31,12 +31,12 @@ void Stack::Pop() {
 
 void Stack::Print() const {
     if (top == nullptr) {
-        std::cout << "Ñòåê ïóñò" << std::endl;
+        std::cout << "Ã‘Ã²Ã¥Ãª Ã¯Ã³Ã±Ã²" << std::endl;
         return;
     }
 
     Node* current = top;
-    std::cout << "Ñîäåðæèìîå ñòåêà (" << count << " ýëåìåíòîâ):" << std::endl;
+    std::cout << "Ã‘Ã®Ã¤Ã¥Ã°Ã¦Ã¨Ã¬Ã®Ã¥ Ã±Ã²Ã¥ÃªÃ  (" << count << " Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã®Ã¢):" << std::endl;
 
     while (current != nullptr) {
         std::cout << current->data << std::endl;
@@ -49,7 +49,7 @@ int Stack::Size() const {
 }
 
 void PrintTopAddress(const Stack& stack) {
-    std::cout << "Àäðåñ âåðøèíû ñòåêà: " << stack.top << std::endl;
+    std::cout << "Ã€Ã¤Ã°Ã¥Ã± Ã¢Ã¥Ã°Ã¸Ã¨Ã­Ã» Ã±Ã²Ã¥ÃªÃ : " << stack.top << std::endl;
 }
 
 bool ValidateInput(int& value) {
