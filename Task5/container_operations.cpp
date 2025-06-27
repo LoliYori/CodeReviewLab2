@@ -3,24 +3,24 @@
 template <typename Container>
 void FillContainer(Container& container, int size) {
     if (size < 5) {
-        std::cerr << "Îøèáêà: Ðàçìåð êîíòåéíåðà äîëæåí áûòü íå ìåíåå 5\n";
+        std::cerr << "ÃŽÃ¸Ã¨Ã¡ÃªÃ : ÃÃ Ã§Ã¬Ã¥Ã° ÃªÃ®Ã­Ã²Ã¥Ã©Ã­Ã¥Ã°Ã  Ã¤Ã®Ã«Ã¦Ã¥Ã­ Ã¡Ã»Ã²Ã¼ Ã­Ã¥ Ã¬Ã¥Ã­Ã¥Ã¥ 5\n";
         return false;
     }
 
-    int method;
-    std::cout << "Âûáåðåòå ñïîñîá çàïîëíåíèÿ êîíòåéíåðà: \n"
-        << "1)Ââîä ñ êëàâèàòóðû.\n"
-        << "2)Ââîä ñ ïîìîùüþ ðàíäîìàéçåðà.\n"
-        << "3)Ââîä äàííûõ èç òåêñòîâîãî ôàéëà.\n";
+    int method = 0;
+    std::cout << "Ã‚Ã»Ã¡Ã¥Ã°Ã¥Ã²Ã¥ Ã±Ã¯Ã®Ã±Ã®Ã¡ Ã§Ã Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¿ ÃªÃ®Ã­Ã²Ã¥Ã©Ã­Ã¥Ã°Ã : \n"
+        << "1)Ã‚Ã¢Ã®Ã¤ Ã± ÃªÃ«Ã Ã¢Ã¨Ã Ã²Ã³Ã°Ã».\n"
+        << "2)Ã‚Ã¢Ã®Ã¤ Ã± Ã¯Ã®Ã¬Ã®Ã¹Ã¼Ã¾ Ã°Ã Ã­Ã¤Ã®Ã¬Ã Ã©Ã§Ã¥Ã°Ã .\n"
+        << "3)Ã‚Ã¢Ã®Ã¤ Ã¤Ã Ã­Ã­Ã»Ãµ Ã¨Ã§ Ã²Ã¥ÃªÃ±Ã²Ã®Ã¢Ã®Ã£Ã® Ã´Ã Ã©Ã«Ã .\n";
     std::cin >> method;
 
     switch (method) {
     case 1: {
         for (int i = 0; i < size; ++i) {
-            int value;
-            std::cout << "Ââåäèòå ýëåìåíò " << i + 1 << ": ";
+            int value = 0;
+            std::cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã² " << i + 1 << ": ";
             if (!(std::cin >> value)) {
-                std::cerr << "Îøèáêà ââîäà äàííûõ\n";
+                std::cerr << "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã¢Ã¢Ã®Ã¤Ã  Ã¤Ã Ã­Ã­Ã»Ãµ\n";
                 return false;
             }
             container.insert(container.end(), value);
@@ -37,13 +37,13 @@ void FillContainer(Container& container, int size) {
     case 3: {
         std::ifstream inputFile("input.txt");
         if (!inputFile) {
-            std::cerr << "Îøèáêà: Íå óäàëîñü îòêðûòü ôàéë\n";
+            std::cerr << "ÃŽÃ¸Ã¨Ã¡ÃªÃ : ÃÃ¥ Ã³Ã¤Ã Ã«Ã®Ã±Ã¼ Ã®Ã²ÃªÃ°Ã»Ã²Ã¼ Ã´Ã Ã©Ã«\n";
             return false;
         }
         for (int i = 0; i < size; ++i) {
-            int value;
+            int value = 0;
             if (!(inputFile >> value)) {
-                std::cerr << "Îøèáêà: Íåäîñòàòî÷íî äàííûõ â ôàéëå\n";
+                std::cerr << "ÃŽÃ¸Ã¨Ã¡ÃªÃ : ÃÃ¥Ã¤Ã®Ã±Ã²Ã Ã²Ã®Ã·Ã­Ã® Ã¤Ã Ã­Ã­Ã»Ãµ Ã¢ Ã´Ã Ã©Ã«Ã¥\n";
                 return false;
             }
             container.insert(container.end(), value);
@@ -51,7 +51,7 @@ void FillContainer(Container& container, int size) {
         break;
     }
     default:
-        std::cerr << "Îøèáêà: Íåâåðíûé ìåòîä ââîäà\n";
+        std::cerr << "ÃŽÃ¸Ã¨Ã¡ÃªÃ : ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã¬Ã¥Ã²Ã®Ã¤ Ã¢Ã¢Ã®Ã¤Ã \n";
         return false;
     }
     return true;
@@ -59,13 +59,13 @@ void FillContainer(Container& container, int size) {
 
 template <typename Container>
 void PrintContainer(const Container& container) {
-    std::cout << "Ýëåìåíòû (ïðÿìîé ïîðÿäîê): ";
+    std::cout << "ÃÃ«Ã¥Ã¬Ã¥Ã­Ã²Ã» (Ã¯Ã°Ã¿Ã¬Ã®Ã© Ã¯Ã®Ã°Ã¿Ã¤Ã®Ãª): ";
     for (auto it = container.begin(); it != container.end(); ++it) {
         std::cout << *it << " ";
     }
     std::cout << "\n";
 
-    std::cout << "Ýëåìåíòû (îáðàòíûé ïîðÿäîê): ";
+    std::cout << "ÃÃ«Ã¥Ã¬Ã¥Ã­Ã²Ã» (Ã®Ã¡Ã°Ã Ã²Ã­Ã»Ã© Ã¯Ã®Ã°Ã¿Ã¤Ã®Ãª): ";
     for (auto rit = container.rbegin(); rit != container.rend(); ++rit) {
         std::cout << *rit << " ";
     }
