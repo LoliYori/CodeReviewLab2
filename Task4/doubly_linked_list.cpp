@@ -35,7 +35,7 @@ void DoublyLinkedList::removeNodesWithEqualNeighbors() {
         Node* nextNode = current->next;
 
         if (current->prev->value == current->next->value) {
-            // Óäàëÿåì òåêóùèé óçåë
+            // Ã“Ã¤Ã Ã«Ã¿Ã¥Ã¬ Ã²Ã¥ÃªÃ³Ã¹Ã¨Ã© Ã³Ã§Ã¥Ã«
             current->prev->next = current->next;
             current->next->prev = current->prev;
 
@@ -62,7 +62,7 @@ void DoublyLinkedList::removeNodesWithEqualNeighbors() {
 
 void DoublyLinkedList::print() const {
     if (isEmpty()) {
-        std::cout << "Ñïèñîê ïóñò" << std::endl;
+        std::cout << "Ã‘Ã¯Ã¨Ã±Ã®Ãª Ã¯Ã³Ã±Ã²" << std::endl;
         return;
     }
 
@@ -75,7 +75,9 @@ void DoublyLinkedList::print() const {
 }
 
 void DoublyLinkedList::clear() {
-    if (isEmpty()) return;
+    if (isEmpty()) {
+        return;
+    }
 
     Node* current = head;
     do {
