@@ -35,7 +35,6 @@ void DoublyLinkedList::removeNodesWithEqualNeighbors() {
         Node* nextNode = current->next;
 
         if (current->prev->value == current->next->value) {
-            // Óäàëÿåì òåêóùèé óçåë
             current->prev->next = current->next;
             current->next->prev = current->prev;
 
