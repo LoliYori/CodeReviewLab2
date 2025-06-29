@@ -2,34 +2,34 @@
 
 int main() {
     try {
-        std::deque<int> dequeContainer;
-        std::list<int> listContainer;
-        int containerSize = 0;
+        std::deque<int> dequeContainer; 
+        std::list<int> listContainer;   
+        int containerSize = 0;      
 
-        std::cout << "Enter deque size (>=5): ";
+        std::cout << "Введите размер дека (>=5): ";
         std::cin >> containerSize;
         FillContainer(dequeContainer, containerSize);
 
-        std::cout << "Enter list size (>=5): ";
+        std::cout << "Введите размер списка (>=5): ";
         std::cin >> containerSize;
         FillContainer(listContainer, containerSize);
 
-        std::cout << "\nOriginal deque:\n";
+        std::cout << "\nИсходный дек:\n";
         PrintContainer(dequeContainer);
-        std::cout << "Original list:\n";
+        std::cout << "Исходный список:\n";
         PrintContainer(listContainer);
 
         InsertElements(dequeContainer, listContainer);
 
-        std::cout << "\nAfter insertion:\n";
-        std::cout << "Deque:\n";
+        std::cout << "\nПосле вставки:\n";
+        std::cout << "Дек:\n";
         PrintContainer(dequeContainer);
-        std::cout << "List:\n";
+        std::cout << "Список:\n";
         PrintContainer(listContainer);
 
     }
     catch (const std::exception& error) {
-        std::cerr << "Error: " << error.what() << "\n";
+        std::cerr << "Ошибка: " << error.what() << "\n";
         return 1;
     }
 
