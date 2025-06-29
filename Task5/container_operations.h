@@ -9,16 +9,16 @@
 #include <algorithm>
 #include <stdexcept>
 
+// РљР»Р°СЃСЃ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РєРѕРЅС‚РµР№РЅРµСЂР°РјРё
+class ContainerOperations {
+public:
+    template <typename Container>
+    static bool FillContainer(Container& container, int size);
 
-// Функция заполнения контейнера
-template <typename Container>
-void FillContainer(Container& container, int size);
+    template <typename Container>
+    static void PrintContainer(const Container& container);
 
-// Функция вывода контейнера
-template <typename Container>
-void PrintContainer(const Container& container);
-
-// Функция вставки элементов
-void InsertElements(std::deque<int>& sourceDeque, std::list<int>& targetList);
+    static void InsertElements(std::deque<int>& sourceDeque, std::list<int>& targetList);
+};
 
 #endif // CONTAINER_OPERATIONS_H
