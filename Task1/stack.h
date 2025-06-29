@@ -16,65 +16,26 @@
 #include <clocale>
 #include <limits>
 
-bool ValidateInput(int& value);
+struct Node {
+    int data;    
+    Node* next;    
+    Node(int val) : data(val), next(nullptr) {}
+};
 
-/**
-     * @struct Node
-     * @brief Узел стека
-     */
-    struct Node {
-        int data;    
-        Node* next;    
-
-        /**
-         * @brief Конструктор узла
-         * @param val Значение элемента
-         */
-        Node(int val) : data(val), next(nullptr) {}
-    };
-
-/**
- * @class Stack
- * @brief Реализация стека на основе связного списка
- */
 class Stack {
+public:
+    Stack();
+    void Push(int value);
+    void Pop();
+    void Print() const;
+    int Size() const;
+    friend void PrintTopAddress(const Stack& stack);
+
+    bool ValidateInput(int& value);
+
 private:
     Node* top; 
     int count; 
-
-public:
-    /**
-     * @brief Конструктор по умолчанию
-     */
-    Stack();
-
-    /**
-     * @brief Добавляет элемент в стек
-     * @param value Значение для добавления
-     */
-    void Push(int value);
-
-    /**
-     * @brief Извлекает верхний элемент из стека
-     */
-    void Pop();
-
-    /**
-     * @brief Выводит содержимое стека
-     */
-    void Print() const;
-
-    /**
-     * @brief Возвращает количество элементов в стеке
-     * @return Количество элементов
-     */
-    int Size() const;
-
-    /**
-     * @brief Дружественная функция для вывода адреса вершины
-     * @param stack Стек
-     */
-    friend void PrintTopAddress(const Stack& stack);
 };
 
 #endif // STACK_H
