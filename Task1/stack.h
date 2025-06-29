@@ -31,7 +31,7 @@ public:
     int Size() const;
     friend void PrintTopAddress(const Stack& stack);
 
-    bool ValidateInput(int& value);
+    friend bool ValidateInput(int& value);
 
 private:
     Node* top; 
