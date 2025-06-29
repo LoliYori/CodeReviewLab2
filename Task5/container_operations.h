@@ -9,7 +9,6 @@
 #include <algorithm>
 #include <stdexcept>
 
-// Класс для работы с контейнерами
 class ContainerOperations {
 public:
     template <typename Container>
